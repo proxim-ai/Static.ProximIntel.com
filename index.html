@@ -2,7 +2,10 @@
 <html>
 <head>
   <title>Under Construction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
     body {
       background-color: black;
       font-family: 'Roboto', sans-serif;
@@ -19,6 +22,7 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
+      line-height: 1.6;
     }
 
     /* Footer styles */
@@ -41,6 +45,9 @@
       white-space: nowrap;
       font-size: 5vw;
       color: white;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     /* Centered text */
@@ -70,6 +77,47 @@
     .launch-text {
       font-size: 1.5vw;
       margin-top: 5px;
+    }
+
+    p {
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto 15px auto;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 4vw;
+      }
+      
+      h1 {
+        font-size: 8vw;
+      }
+      
+      .footer {
+        position: relative;
+        margin-top: 50px;
+      }
+
+      #countdown-timer {
+        font-size: 5vw;
+      }
+
+      .launch-text {
+        font-size: 3vw;
+      }
+
+      .countdown {
+        padding: 10px;
+        margin-top: 20px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .centered {
+        width: 90%;
+      }
     }
   </style>
 </head>
