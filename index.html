@@ -51,17 +51,73 @@
       transform: translate(-50%, -50%);
       text-align: center;
     }
+    
+    /* Countdown timer styles */
+    .countdown {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 8px;
+    }
+
+    #countdown-timer {
+      font-size: 2.5vw;
+      font-weight: bold;
+      color: #ff9800;
+      margin-bottom: 10px;
+    }
+
+    .launch-text {
+      font-size: 1.5vw;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
   <div class="centered">
     <h1>Proxim Intel</h1>
     <p>Empowering defense operations and R&D with AI-driven modeling and simulation - making advanced tools and analysis accessible, fast, and intuitive</p>
+    
+    <div class="countdown">
+      <div id="countdown-timer">Loading...</div>
+      <p class="launch-text">Site Launch in Progress</p>
+    </div>
   </div>
   <!-- Footer -->
   <div class="footer">
     <p>admin@proximintel.com</p>
     <p>Copyright &copy; 2025 Proxim LLC</p>
   </div>
+
+  <!-- Countdown timer script -->
+  <script>
+    // Set the date we're counting down to (adjust to your actual launch date)
+    const countDownDate = new Date("May 1, 2025").getTime();
+    
+    // Update the count down every 1 second
+    const x = setInterval(function() {
+      // Get today's date and time
+      const now = new Date().getTime();
+      
+      // Find the distance between now and the count down date
+      const distance = countDownDate - now;
+      
+      // Time calculations for days, hours, minutes and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Display the result in the element with id="countdown-timer"
+      document.getElementById("countdown-timer").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+      
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown-timer").innerHTML = "LAUNCHING SOON!";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
